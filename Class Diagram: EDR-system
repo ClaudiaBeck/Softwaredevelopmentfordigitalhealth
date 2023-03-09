@@ -5,11 +5,11 @@ Person <|-- Patient
 Person <|--- Staff
 Patient "1..1" --- "1..*" Appointment
 Appointment "0..*" -- "0..*" Medicine
-Staff --* DentalClinic
-Secretary --> Staff
-DentalHygienist --> Staff
+Staff --o DentalClinic
+Secretary --|> Staff
+DentalHygienist --|> Staff
 Prescription "0..*" -- "1..*"Dentist
-Dentist --> Staff
+Dentist --|> Staff
 DentalClinic -- Person
 Prescription "0..1"-- "1..1" Medicine
 
