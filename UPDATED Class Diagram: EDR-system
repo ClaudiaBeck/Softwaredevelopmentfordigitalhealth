@@ -1,15 +1,10 @@
 @startuml
-'https://plantuml.com/class-diagram
-
 Person <|-- Patient
 Person <|--- Staff
 Patient "1..1" --- "1..*" Appointment
 Appointment "0..*" -- "0..*" Medicine
 Staff --o DentalClinic
-Secretary --|> Staff
-DentalHygienist --|> Staff
 Prescription "0..*" -- "1..*"Dentist
-Dentist --|> Staff
 DentalClinic -- Person
 Prescription "0..1"-- "1..1" Medicine
 
@@ -38,9 +33,13 @@ Prescription : listOfMedicine:str
 Medicine : type:str
 Medicine : dose:float
 
+Staff : type:str=="Dentist, Dentalhygienist, Secretary"
 Staff : joined:float
 Staff : education:str
 Staff : certification:str
+Staff : Login(self):str
+Staff : Search(self):str
+Staff : Patientinfo(self):str
 
 
 
